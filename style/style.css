@@ -27,6 +27,7 @@ img {
     align-items: center;
     justify-content: center;
     height:700px;
+    position: relative;
 }
 
 .img {
@@ -43,3 +44,19 @@ img {
 
 }
 
+#top {
+    position: absolute;
+    top: 150px;
+
+}
+
+
+#bot {
+    position: absolute;
+    bottom: 150px;
+
+}
+
+.hidden {
+    display: none;
+}

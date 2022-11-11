@@ -25,6 +25,56 @@ for (let index = 0; index < imgArray.length; index++) {
     cont.append (div);
 }
 
-divArrey = document.getElementsByClassName("img");
-console.log(divArrey);
+const divArrey = document.getElementsByClassName("img");
+
+let activeIteam = 0;
+
+let btnBot = document.getElementById("bot");
+btnBot.classList.add("hidden")
 divArrey[0].classList.add("active");
+let btnTop = document.getElementById("top");
+btnTop.addEventListener ("click",
+function () {   
+    if (activeIteam < divArrey.length - 1) {
+        divArrey[activeIteam].classList.remove("active");
+
+        activeIteam ++;
+
+        divArrey[activeIteam].classList.add("active")
+        
+    };
+
+    if (activeIteam === divArrey.length - 1) {
+        btnTop.classList.add("hidden");
+    }
+
+    if (activeIteam > 0) {
+        btnBot.classList.remove("hidden");
+        
+    }
+    
+});
+
+
+btnBot.addEventListener ("click",
+function () {   
+    if (activeIteam > 0) {
+        divArrey[activeIteam].classList.remove("active");
+
+        activeIteam --;
+
+        divArrey[activeIteam].classList.add("active")
+        
+    };
+
+    if (activeIteam === 0) {
+        btnBot.classList.add("hidden");
+    }
+
+    if (activeIteam < 4) {
+        btnTop.classList.remove("hidden");
+        
+    }
+    
+});
+
